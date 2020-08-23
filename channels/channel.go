@@ -32,8 +32,11 @@ func looper(number int) (result []int, sumChan int) {
 	x := MakeArr(number)
 
 	//making buffered channel
-	chanresult := make(chan int, 1)
+	chanresult := make(chan int, 0)
 	var acc int
+
+	// close channel when done
+	defer close(chanresult)
 
 	// creating channels to calculate the total sum of each array value
 	for acc = 0; acc < len(x); acc++ {

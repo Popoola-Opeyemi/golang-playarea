@@ -2,8 +2,10 @@ package main
 
 import (
 	"playarea/channels"
+	"playarea/interfaces"
 )
 
 func main() {
-	channels.TestChannel(90000)
+	interfaces.TestInterface()
+	channels.TestChannel(9)
 }
